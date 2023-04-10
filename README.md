@@ -14,7 +14,9 @@ For the bonus (use of forks) run
 $ make bonus
 ```
 
-Push_swap executable takes a list of integers as arguments and then prints out the series of operations required to sort them in ascending order.
+Philo executable takes the following arguments
 ```
 $ ./philo number_of_philosophers time_to_die time_to_eat time_to_sleep [number_of_times_each_philosopher_must_eat]
 ```
+## NB
+This project is part of the School 42 curriculum. It has to be written entirely in C and comply with several "norme" rules, including for the code writing.
