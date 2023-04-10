@@ -9,7 +9,7 @@ To compile the mandatory part (use of threads) run
 $ make
 ```
 
-For the bonus (use of forks) run
+For the bonus (use of forked processes) run
 ```
 $ make bonus
 ```
