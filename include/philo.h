@@ -6,7 +6,7 @@
 /*   By: lle-bret <lle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 17:10:33 by lle-bret          #+#    #+#             */
-/*   Updated: 2023/04/07 18:05:23 by lle-bret         ###   ########.fr       */
+/*   Updated: 2023/05/09 16:40:01 by lle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # define ARG_ERROR		"Wrong arguments"
 # define MALLOC_ERROR	"Malloc failed"
 
+# define CREAT_LOG		"has been created"
 # define FORK_LOG		"has taken a fork"
 # define EAT_LOG		"is eating"
 # define SLEEP_LOG		"is sleeping"
@@ -53,6 +54,7 @@ typedef struct s_philo{
 	unsigned int	time_to_sleep;
 	int				max_eat;
 	struct timeval	start;
+	pthread_mutex_t	end_mutex;
 	pthread_mutex_t	eat_mutex;
 	int				number_of_times_he_ate;
 	struct timeval	last_time_he_ate;

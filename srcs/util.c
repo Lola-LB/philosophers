@@ -6,7 +6,7 @@
 /*   By: lle-bret <lle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 11:28:45 by lle-bret          #+#    #+#             */
-/*   Updated: 2023/04/07 17:59:47 by lle-bret         ###   ########.fr       */
+/*   Updated: 2023/05/09 16:35:25 by lle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +59,15 @@ void	print_log(t_philo *philo, char *log, char *color)
 {
 	struct timeval	tv;
 
+	(void) color;
 	if (!is_end(philo, 0))
 	{
 		gettimeofday(&tv, NULL);
 		pthread_mutex_lock(&philo->data->printf_mutex);
-		printf("%s%09ld %d %s\n%s", color, time_ms(tv, philo),
-			philo->id, log, NC);
+		printf("%09ld %d %s\n", time_ms(tv, philo),
+			philo->id, log);
+		// printf("%s%09ld %d %s\n%s", color, time_ms(tv, philo),
+		// 	philo->id, log, NC);
 		pthread_mutex_unlock(&philo->data->printf_mutex);
 	}
 }

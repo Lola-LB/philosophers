@@ -6,7 +6,7 @@
 /*   By: lle-bret <lle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 17:10:10 by lle-bret          #+#    #+#             */
-/*   Updated: 2023/04/07 18:01:52 by lle-bret         ###   ########.fr       */
+/*   Updated: 2023/05/09 16:40:11 by lle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,15 @@ void	eat_routine(t_philo *philo)
 
 void	*thread_routine(t_philo *philo)
 {
+	// print_log(philo, CREAT_LOG, WHITE);
 	if (philo->id % 2)
-		ft_usleep(philo->time_to_die * 0.25);
+		ft_usleep(philo->time_to_die * 0.10);
 	while (!is_end(philo, 0) && (number_of_times_he_ate(philo)
 			< philo->max_eat || philo->max_eat == -1))
 	{
 		if (!is_end(philo, 0))
 		{
-			if (number_of_times_he_ate(philo) && philo->data->nb % 2)
+			if (number_of_times_he_ate(philo) == 1 && philo->data->nb % 2)
 				ft_usleep(philo->time_to_die * 0.25);
 			pthread_mutex_lock(&philo->data->forks[fork_id(philo, 1)]);
 			print_log(philo, FORK_LOG, YELLOW);
