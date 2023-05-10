@@ -6,88 +6,90 @@
 /*   By: lle-bret <lle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 17:39:15 by lle-bret          #+#    #+#             */
-/*   Updated: 2023/04/07 18:12:00 by lle-bret         ###   ########.fr       */
+/*   Updated: 2023/05/10 12:31:35 by lle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-pthread_mutex_t	*init_forks(int nb)
+t_param	init_param(int ac, char **av)
 {
+	t_param	param;
+
+	gettimeofday(&param.start, NULL);
+	param.number_of_philo = ft_atoi(av[1]);
+	param.time_to_die = (unsigned int) ft_atoi(av[2]);
+	param.time_to_eat = (unsigned int) ft_atoi(av[3]);
+	param.time_to_sleep = (unsigned int) ft_atoi(av[4]);
+	if (ac == 6)
+		param.max_eat = ft_atoi(av[5]);
+	else
+		param.max_eat = -1;
+	return (param);
+}
+
+t_data	init_data(int nb)
+{
+	t_data			data;
 	pthread_mutex_t	*forks;
 	int				i;
 
+	pthread_mutex_init(&data.printf_mutex, NULL);
 	forks = malloc(sizeof(pthread_mutex_t) * nb);
-	if (!forks)
-		return (NULL);
+	data.forks = forks;
+	if (!data.forks)
+		return (data);
 	i = 0;
 	while (i < nb)
 	{
 		pthread_mutex_init(forks + i, NULL);
 		++i;
 	}
-	return (forks);
+	return (data);
 }
 
-t_philo	*init_philosophers(t_data *data, int ac, char **av)
+t_philo	*init_philosophers(t_data *data, t_param param)
 {
 	t_philo	*philosophers;
 	int		i;
 
-	philosophers = malloc(sizeof(t_philo) * data->nb);
+	philosophers = malloc(sizeof(t_philo) * param.number_of_philo);
 	if (!philosophers)
 		return (NULL);
 	i = 0;
-	while (i < data->nb)
+	while (i < param.number_of_philo)
 	{
-		philosophers[i] = init_philo(i, data, ac, av);
+		philosophers[i].data = data;
+		philosophers[i].param = param;
+		philosophers[i].id = i;
+		gettimeofday(&philosophers[i].last_time_he_ate, NULL);
+		philosophers[i].number_of_times_he_ate = 0;
+		pthread_mutex_init(&philosophers[i].he_ate_mutex, NULL);
+		philosophers[i].end = 0;
+		pthread_mutex_init(&philosophers[i].end_mutex, NULL);
 		++i;
 	}
 	return (philosophers);
 }
 
-t_philo	init_philo(int i, t_data *data, int ac, char **av)
+t_death	init_death(t_data *data, t_philo *philo)
 {
-	t_philo	philo;
+	t_death	death;
 
-	philo.data = data;
-	philo.number_of_philo = ft_atoi(av[1]);
-	philo.time_to_die = (unsigned int) ft_atoi(av[2]);
-	philo.time_to_eat = (unsigned int) ft_atoi(av[3]);
-	philo.time_to_sleep = (unsigned int) ft_atoi(av[4]);
-	if (ac == 6)
-		philo.max_eat = ft_atoi(av[5]);
-	else
-		philo.max_eat = -1;
-	philo.id = i;
-	philo.number_of_times_he_ate = 0;
-	gettimeofday(&philo.start, NULL);
-	gettimeofday(&philo.last_time_he_ate, NULL);
-	pthread_mutex_init(&philo.eat_mutex, NULL);
-	return (philo);
-}
-
-t_data	init_data(char **av)
-{
-	t_data	data;
-
-	data.nb = ft_atoi(av[1]);
-	if (data.nb)
-	{
-		data.global_end = 0;
-		pthread_mutex_init(&data.end_mutex, NULL);
-		pthread_mutex_init(&data.printf_mutex, NULL);
-		data.forks = init_forks(data.nb);
-	}
-	return (data);
+	death.philo = philo;
+	death.param = philo->param;
+	death.data = data;
+	pthread_mutex_init(&death.global_end_mutex, NULL);
+	death.global_end = 0;
+	return (death);
 }
 
 int	fork_id(t_philo *philo, int first)
 {
 	if (first)
 		return (philo->id * (philo->id % 2 == 1) + (philo->id % 2 == 0)
-			* ((philo->id + 1) % (philo->data->nb)));
+			* ((philo->id + 1) % (philo->param.number_of_philo)));
 	return (philo->id * (philo->id % 2 == 0)
 		+ (philo->id % 2 == 1) * ((philo->id + 1)
-			% (philo->data->nb)));
+			% (philo->param.number_of_philo)));
 }

@@ -4,6 +4,7 @@ SRCS		= philo.c				\
 			  lib.c					\
 			  free.c				\
 			  init.c				\
+			  end.c					\
 
 SRCS_BONUS	= philo_bonus.c			\
 			  process_bonus.c		\
