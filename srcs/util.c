@@ -51,6 +51,7 @@ void	print_log(t_philo *philo, char *log, char *color)
 	{
 		gettimeofday(&tv, NULL);
 		pthread_mutex_lock(philo->data->printf_mutex);
+		printf("%p\n", philo->data->printf_mutex);
 		printf("%09ld %d %s\n", time_ms(tv, &philo->param.start),
 			philo->id, log);
 		// printf("%s%09ld %d %s\n%s", color, time_ms(tv, philo),
