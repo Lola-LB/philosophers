@@ -6,7 +6,7 @@
 /*   By: lle-bret <lle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 17:10:33 by lle-bret          #+#    #+#             */
-/*   Updated: 2023/05/10 13:07:16 by lle-bret         ###   ########.fr       */
+/*   Updated: 2023/05/10 16:27:22 by lle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ typedef struct s_param{
 	unsigned int	time_to_eat;
 	unsigned int	time_to_sleep;
 	int				max_eat;
-	struct timeval	start;
+	long			start;
 }	t_param;
 
 typedef struct s_philo{
@@ -58,7 +58,7 @@ typedef struct s_philo{
 	int				end;
 	pthread_mutex_t	*end_mutex;
 	int				number_of_times_he_ate;
-	struct timeval	last_time_he_ate;
+	long			last_time_he_ate;
 	pthread_mutex_t	*he_ate_mutex;
 }	t_philo;
 
@@ -94,10 +94,11 @@ int				fork_id(t_philo *philo, int first);
 /*                                   util.c                                   */
 /* ************************************************************************** */
 
-long			time_ms(struct timeval tv, struct timeval *start);
+long			time_ms(struct timeval tv, long *start);
 void			print_log(t_philo *philo, char *log, char *color);
 int				number_of_times_he_ate(t_philo *philo);
-struct timeval	last_eat_time(t_philo *philo);
+long			last_eat_time(t_philo *philo);
+void			ft_usleep(long time_to_sleep);
 
 /* ************************************************************************** */
 /*                                    end.c                                   */
@@ -123,7 +124,6 @@ int				ft_atoi(char *str);
 
 void			free_forks(pthread_mutex_t *forks, int nb);
 void			free_philo(t_death *death);
-void			ft_usleep(long time_to_sleep);
 void			free_if(void *to_free);
 
 #endif

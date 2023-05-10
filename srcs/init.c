@@ -6,7 +6,7 @@
 /*   By: lle-bret <lle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 17:39:15 by lle-bret          #+#    #+#             */
-/*   Updated: 2023/05/10 13:34:59 by lle-bret         ###   ########.fr       */
+/*   Updated: 2023/05/10 16:31:52 by lle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 
 t_param	init_param(int ac, char **av)
 {
-	t_param	param;
+	t_param			param;
+	struct timeval	now;
+	
 
-	gettimeofday(&param.start, NULL);
+	gettimeofday(&now, NULL);
+	param.start = (long) now.tv_sec * 1000 + (long) now.tv_usec / 1000;
 	param.number_of_philo = ft_atoi(av[1]);
 	param.time_to_die = (unsigned int) ft_atoi(av[2]);
 	param.time_to_eat = (unsigned int) ft_atoi(av[3]);
@@ -73,13 +76,12 @@ t_philo	*init_philosophers(t_data *data, t_param param)
 		philosophers[i].data = data;
 		philosophers[i].param = param;
 		philosophers[i].id = i;
-		gettimeofday(&philosophers[i].last_time_he_ate, NULL);
+		philosophers[i].last_time_he_ate = param.start;
 		philosophers[i].number_of_times_he_ate = 0;
 		philosophers[i].he_ate_mutex = he_ate_mutex + i;
 		pthread_mutex_init(philosophers[i].he_ate_mutex, NULL);
 		philosophers[i].end = 0;
 		philosophers[i].end_mutex = end_mutex + i;
-		// printf("init %i: %p\n", i, philosophers[i].end_mutex );
 		pthread_mutex_init(philosophers[i].end_mutex, NULL);
 	}
 	return (philosophers);
@@ -87,7 +89,7 @@ t_philo	*init_philosophers(t_data *data, t_param param)
 
 t_death	init_death(t_data *data, t_philo *philo)
 {
-	t_death	death;
+	t_death			death;
 	pthread_mutex_t	global_end_mut;
 
 	death.philo = philo;
@@ -99,12 +101,3 @@ t_death	init_death(t_data *data, t_philo *philo)
 	return (death);
 }
 
-int	fork_id(t_philo *philo, int first)
-{
-	if (first)
-		return (philo->id * (philo->id % 2 == 1) + (philo->id % 2 == 0)
-			* ((philo->id + 1) % (philo->param.number_of_philo)));
-	return (philo->id * (philo->id % 2 == 0)
-		+ (philo->id % 2 == 1) * ((philo->id + 1)
-			% (philo->param.number_of_philo)));
-}

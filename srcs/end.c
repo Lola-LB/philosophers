@@ -6,7 +6,7 @@
 /*   By: lle-bret <lle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 12:30:11 by lle-bret          #+#    #+#             */
-/*   Updated: 2023/05/10 13:34:45 by lle-bret         ###   ########.fr       */
+/*   Updated: 2023/05/10 17:07:45 by lle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int	is_end(t_philo *philo)
 {
 	int	end;
 
-	// printf("%i: %p\n", philo->id, philo->end_mutex);
 	pthread_mutex_lock(philo->end_mutex);
 	end = philo->end;
 	pthread_mutex_unlock(philo->end_mutex);

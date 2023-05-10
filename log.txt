@@ -2,23 +2,23 @@
 000000000 0 has taken a fork
 000000000 0 is eating
 000000000 2 has taken a fork
-000000000 2 has taken a fork
-000000000 2 is eating
 000000000 4 has taken a fork
 000000000 4 has taken a fork
 000000000 4 is eating
+000000000 2 has taken a fork
+000000000 2 is eating
+000000001 8 has taken a fork
+000000001 8 has taken a fork
+000000001 8 is eating
 000000000 6 has taken a fork
-000000000 6 has taken a fork
-000000000 6 is eating
-000000000 8 has taken a fork
-000000000 8 has taken a fork
-000000000 8 is eating
-000000001 10 has taken a fork
-000000001 10 has taken a fork
-000000001 10 is eating
+000000001 6 has taken a fork
+000000001 6 is eating
 000000001 12 has taken a fork
 000000001 12 has taken a fork
 000000001 12 is eating
+000000001 10 has taken a fork
+000000001 10 has taken a fork
+000000001 10 is eating
 000000001 14 has taken a fork
 000000001 14 has taken a fork
 000000001 14 is eating
@@ -28,291 +28,759 @@
 000000001 18 has taken a fork
 000000001 18 has taken a fork
 000000001 18 is eating
-000000200 8 is sleeping
-000000200 9 has taken a fork
+000000001 22 has taken a fork
+000000001 22 has taken a fork
+000000001 22 is eating
+000000001 20 has taken a fork
+000000001 20 has taken a fork
+000000001 20 is eating
+000000001 24 has taken a fork
+000000001 24 has taken a fork
+000000001 24 is eating
+000000001 26 has taken a fork
+000000001 26 has taken a fork
+000000001 26 is eating
+000000001 28 has taken a fork
+000000001 28 has taken a fork
+000000001 28 is eating
+000000001 30 has taken a fork
+000000001 30 has taken a fork
+000000001 30 is eating
+000000001 32 has taken a fork
+000000001 32 has taken a fork
+000000001 32 is eating
+000000001 34 has taken a fork
+000000001 34 has taken a fork
+000000001 34 is eating
+000000001 36 has taken a fork
+000000001 36 has taken a fork
+000000001 36 is eating
+000000001 38 has taken a fork
+000000001 38 has taken a fork
+000000001 38 is eating
+000000001 40 has taken a fork
+000000001 40 has taken a fork
+000000001 40 is eating
 000000200 0 is sleeping
+000000200 42 has taken a fork
+000000200 42 has taken a fork
+000000200 42 is eating
+000000200 5 has taken a fork
+000000200 1 has taken a fork
 000000200 4 is sleeping
-000000200 2 is sleeping
-000000200 7 has taken a fork
-000000200 7 has taken a fork
-000000200 7 is eating
 000000200 1 has taken a fork
-000000200 1 has taken a fork
-000000200 5 has taken a fork
-000000200 5 has taken a fork
-000000200 5 is eating
 000000200 1 is eating
-000000200 6 is sleeping
+000000200 2 is sleeping
 000000200 3 has taken a fork
 000000200 3 has taken a fork
 000000200 3 is eating
-000000201 10 is sleeping
-000000201 9 has taken a fork
-000000201 9 is eating
-000000201 17 has taken a fork
-000000201 11 has taken a fork
-000000201 16 is sleeping
+000000201 22 is sleeping
+000000201 36 is sleeping
 000000201 14 is sleeping
+000000201 20 is sleeping
+000000201 6 is sleeping
+000000201 37 has taken a fork
+000000201 23 has taken a fork
+000000201 32 is sleeping
+000000201 28 is sleeping
+000000201 29 has taken a fork
+000000201 5 has taken a fork
+000000201 5 is eating
 000000201 15 has taken a fork
-000000201 15 has taken a fork
-000000201 15 is eating
-000000201 18 is sleeping
+000000201 34 is sleeping
+000000201 21 has taken a fork
+000000201 33 has taken a fork
+000000201 33 has taken a fork
+000000201 33 is eating
+000000201 23 has taken a fork
+000000201 23 is eating
+000000201 35 has taken a fork
+000000201 35 has taken a fork
+000000201 35 is eating
+000000201 21 has taken a fork
+000000201 21 is eating
+000000201 7 has taken a fork
+000000201 25 has taken a fork
+000000201 26 is sleeping
+000000201 27 has taken a fork
+000000201 40 is sleeping
+000000201 27 has taken a fork
+000000201 27 is eating
+000000201 41 has taken a fork
+000000201 25 has taken a fork
+000000201 25 is eating
+000000201 24 is sleeping
+000000201 10 is sleeping
+000000201 38 is sleeping
+000000201 37 has taken a fork
+000000201 37 is eating
+000000201 11 has taken a fork
+000000201 39 has taken a fork
+000000201 39 has taken a fork
+000000201 39 is eating
+000000201 30 is sleeping
+000000201 12 is sleeping
+000000201 29 has taken a fork
+000000201 29 is eating
 000000201 11 has taken a fork
 000000201 11 is eating
-000000201 12 is sleeping
 000000201 13 has taken a fork
 000000201 13 has taken a fork
 000000201 13 is eating
-000000201 19 has taken a fork
-000000201 19 has taken a fork
-000000201 19 is eating
-000000201 17 has taken a fork
-000000201 17 is eating
-000000400 5 is sleeping
-000000400 8 is thinking
-000000400 0 is thinking
-000000400 6 is thinking
-000000400 2 is thinking
-000000400 3 is sleeping
-000000400 7 is sleeping
-000000400 4 is thinking
-000000400 4 has taken a fork
-000000400 4 has taken a fork
-000000400 4 is eating
+000000201 31 has taken a fork
+000000201 31 has taken a fork
+000000201 31 is eating
+000000280 19 has taken a fork
+000000280 19 has taken a fork
+000000280 19 is eating
+000000282 18 is sleeping
+000000282 8 is sleeping
+000000282 7 has taken a fork
+000000282 7 is eating
+000000282 9 has taken a fork
+000000282 9 has taken a fork
+000000282 9 is eating
+000000287 15 has taken a fork
+000000287 15 is eating
+000000287 16 is sleeping
+000000287 17 has taken a fork
+000000287 17 has taken a fork
+000000287 17 is eating
 000000400 1 is sleeping
-000000400 2 has taken a fork
-000000400 2 has taken a fork
-000000400 2 is eating
-000000400 6 has taken a fork
-000000400 6 has taken a fork
-000000400 6 is eating
-000000400 0 has taken a fork
-000000401 10 is thinking
-000000401 9 is sleeping
-000000401 17 is sleeping
-000000401 14 is thinking
-000000401 12 is thinking
-000000401 15 is sleeping
-000000401 8 has taken a fork
-000000401 8 has taken a fork
-000000401 18 is thinking
-000000401 18 has taken a fork
-000000401 16 is thinking
-000000401 10 has taken a fork
-000000401 18 has taken a fork
-000000401 10 has taken a fork
-000000401 12 has taken a fork
-000000401 12 has taken a fork
-000000401 12 is eating
-000000401 16 has taken a fork
-000000401 16 has taken a fork
-000000401 16 is eating
-000000401 10 is eating
-000000401 14 has taken a fork
-000000401 14 has taken a fork
-000000401 14 is eating
-000000401 18 is eating
-000000401 11 is sleeping
+000000400 42 is sleeping
+000000400 3 is sleeping
+000000400 41 has taken a fork
+000000400 41 is eating
+000000401 35 is sleeping
+000000401 21 is sleeping
 000000401 13 is sleeping
-000000401 19 is sleeping
-000000401 8 is eating
-000000401 0 has taken a fork
-000000401 0 is eating
-000000600 4 is sleeping
-000000600 7 is thinking
-000000600 5 is thinking
-000000600 5 has taken a fork
-000000600 2 is sleeping
-000000600 6 is sleeping
-000000600 3 is thinking
-000000600 3 has taken a fork
-000000600 3 has taken a fork
-000000600 3 is eating
+000000401 29 is sleeping
+000000401 37 is sleeping
+000000401 39 is sleeping
+000000401 31 is sleeping
+000000401 25 is sleeping
+000000401 11 is sleeping
+000000401 27 is sleeping
+000000401 23 is sleeping
+000000401 5 is sleeping
+000000401 33 is sleeping
+000000404 14 is thinking
+000000404 32 is thinking
+000000404 34 is thinking
+000000404 20 is thinking
+000000404 0 is thinking
+000000404 28 is thinking
+000000404 6 is thinking
+000000404 2 is thinking
+000000404 30 is thinking
+000000404 26 is thinking
+000000404 12 is thinking
+000000404 38 is thinking
+000000404 22 is thinking
+000000404 10 is thinking
+000000404 40 is thinking
+000000404 4 is thinking
+000000404 24 is thinking
+000000404 36 is thinking
+000000465 36 has taken a fork
+000000465 36 has taken a fork
+000000465 4 has taken a fork
+000000465 38 has taken a fork
+000000465 38 has taken a fork
+000000465 38 is eating
+000000465 4 has taken a fork
+000000465 4 is eating
+000000465 26 has taken a fork
+000000465 26 has taken a fork
+000000465 26 is eating
+000000465 24 has taken a fork
+000000465 24 has taken a fork
+000000465 24 is eating
+000000465 2 has taken a fork
+000000465 2 has taken a fork
+000000465 2 is eating
+000000465 10 has taken a fork
+000000465 30 has taken a fork
+000000465 30 has taken a fork
+000000465 30 is eating
+000000465 12 has taken a fork
+000000465 12 has taken a fork
+000000465 12 is eating
+000000465 36 is eating
+000000465 22 has taken a fork
+000000465 22 has taken a fork
+000000465 22 is eating
+000000465 32 has taken a fork
+000000465 32 has taken a fork
+000000465 32 is eating
+000000465 34 has taken a fork
+000000465 34 has taken a fork
+000000465 34 is eating
+000000465 20 has taken a fork
+000000465 28 has taken a fork
+000000465 28 has taken a fork
+000000465 28 is eating
+000000480 19 is sleeping
+000000480 20 has taken a fork
+000000480 20 is eating
+000000482 18 is thinking
+000000482 8 is thinking
+000000482 7 is sleeping
+000000482 6 has taken a fork
+000000482 6 has taken a fork
+000000482 6 is eating
+000000482 9 is sleeping
+000000482 10 has taken a fork
+000000482 10 is eating
+000000487 15 is sleeping
+000000487 17 is sleeping
+000000487 16 is thinking
+000000487 14 has taken a fork
+000000487 14 has taken a fork
+000000487 14 is eating
+000000529 0 has taken a fork
+000000529 0 has taken a fork
+000000529 0 is eating
+000000543 18 has taken a fork
+000000543 18 has taken a fork
+000000543 18 is eating
+000000544 8 has taken a fork
+000000544 8 has taken a fork
+000000544 8 is eating
+000000550 16 has taken a fork
+000000550 16 has taken a fork
+000000550 16 is eating
 000000600 1 is thinking
-000000600 5 has taken a fork
-000000600 7 has taken a fork
-000000600 5 is eating
-000000601 16 is sleeping
-000000601 9 is thinking
-000000601 0 is sleeping
-000000601 19 is thinking
-000000601 14 is sleeping
-000000601 11 is thinking
+000000600 3 is thinking
+000000600 42 is thinking
+000000600 41 is sleeping
+000000600 40 has taken a fork
+000000600 40 has taken a fork
+000000600 40 is eating
+000000601 39 is thinking
+000000601 5 is thinking
+000000601 29 is thinking
+000000601 23 is thinking
+000000601 27 is thinking
+000000601 35 is thinking
 000000601 13 is thinking
-000000601 17 is thinking
-000000601 17 has taken a fork
-000000601 17 has taken a fork
-000000601 17 is eating
-000000601 18 is sleeping
-000000601 19 has taken a fork
-000000601 19 has taken a fork
-000000601 19 is eating
-000000601 8 is sleeping
-000000601 10 is sleeping
-000000601 1 has taken a fork
-000000601 1 has taken a fork
-000000601 1 is eating
-000000601 15 is thinking
-000000601 15 has taken a fork
-000000601 15 has taken a fork
-000000601 15 is eating
-000000601 9 has taken a fork
-000000601 9 has taken a fork
-000000601 9 is eating
-000000601 11 has taken a fork
-000000601 7 has taken a fork
-000000601 7 is eating
-000000601 12 is sleeping
-000000601 11 has taken a fork
-000000601 11 is eating
-000000601 13 has taken a fork
-000000601 13 has taken a fork
-000000601 13 is eating
-000000800 5 is sleeping
-000000800 3 is sleeping
-000000800 4 is thinking
-000000800 4 has taken a fork
-000000800 4 has taken a fork
-000000800 4 is eating
-000000800 2 is thinking
-000000800 2 has taken a fork
-000000800 6 is thinking
-000000801 12 is thinking
-000000801 9 is sleeping
-000000801 11 is sleeping
-000000801 18 is thinking
-000000801 18 has taken a fork
-000000801 13 is sleeping
-000000801 17 is sleeping
-000000801 19 is sleeping
-000000801 14 is thinking
-000000801 7 is sleeping
-000000801 16 is thinking
-000000801 16 has taken a fork
-000000801 8 is thinking
-000000801 12 has taken a fork
-000000801 12 has taken a fork
-000000801 12 is eating
-000000801 8 has taken a fork
-000000801 0 is thinking
-000000801 10 is thinking
-000000801 10 has taken a fork
-000000801 10 has taken a fork
-000000801 10 is eating
-000000801 8 has taken a fork
-000000801 8 is eating
-000000801 6 has taken a fork
-000000801 6 has taken a fork
-000000801 6 is eating
-000000801 18 has taken a fork
-000000801 18 is eating
-000000801 15 is sleeping
-000000801 2 has taken a fork
-000000801 2 is eating
-000000801 1 is sleeping
-000000801 16 has taken a fork
-000000801 0 has taken a fork
-000000801 0 has taken a fork
-000000801 0 is eating
-000000801 14 has taken a fork
-000000801 14 has taken a fork
-000000801 14 is eating
-000000801 16 is eating
-000001000 4 is sleeping
-000001000 3 is thinking
-000001000 5 is thinking
-000001000 5 has taken a fork
-000001001 15 is thinking
-000001001 18 is sleeping
-000001001 2 is sleeping
-000001001 12 is sleeping
-000001001 16 is sleeping
-000001001 8 is sleeping
-000001001 13 is thinking
-000001001 13 has taken a fork
-000001001 6 is sleeping
-000001001 3 has taken a fork
-000001001 3 has taken a fork
-000001001 10 is sleeping
-000001001 11 is thinking
-000001001 11 has taken a fork
-000001001 11 has taken a fork
-000001001 11 is eating
-000001001 0 is sleeping
-000001001 14 is sleeping
-000001001 13 has taken a fork
-000001001 13 is eating
-000001001 15 has taken a fork
-000001001 15 has taken a fork
-000001001 15 is eating
-000001001 3 is eating
-000001001 17 is thinking
-000001001 17 has taken a fork
-000001001 17 has taken a fork
-000001001 17 is eating
-000001001 9 is thinking
-000001001 9 has taken a fork
-000001001 9 has taken a fork
-000001001 9 is eating
-000001001 19 is thinking
-000001001 19 has taken a fork
-000001001 5 has taken a fork
-000001001 5 is eating
-000001001 19 has taken a fork
-000001001 19 is eating
-000001009 1 is thinking
-000001009 1 has taken a fork
-000001009 1 has taken a fork
-000001009 1 is eating
-000001009 7 is thinking
-000001009 7 has taken a fork
-000001009 7 has taken a fork
-000001009 7 is eating
-000001200 4 is thinking
-000001201 3 is sleeping
-000001201 13 is sleeping
-000001201 17 is sleeping
-000001201 5 is sleeping
-000001201 15 is sleeping
-000001201 14 is thinking
-000001201 14 has taken a fork
-000001201 14 has taken a fork
-000001201 14 is eating
-000001201 8 is thinking
-000001201 16 is thinking
-000001201 4 has taken a fork
-000001201 4 has taken a fork
-000001201 9 is sleeping
-000001201 4 is eating
-000001201 11 is sleeping
-000001201 8 has taken a fork
-000001201 0 is thinking
-000001201 2 is thinking
-000001201 2 has taken a fork
-000001201 16 has taken a fork
-000001201 16 has taken a fork
-000001201 16 is eating
-000001201 19 is sleeping
-000001201 10 is thinking
-000001201 10 has taken a fork
-000001201 6 is thinking
-000001201 10 has taken a fork
-000001201 10 is eating
-000001201 12 is thinking
-000001201 12 has taken a fork
-000001201 12 has taken a fork
-000001201 12 is eating
-000001201 18 is thinking
-000001201 18 has taken a fork
-000001201 18 has taken a fork
-000001201 18 is eating
-000001209 7 is sleeping
-000001209 8 has taken a fork
-000001209 8 is eating
-000001209 1 is sleeping
-000001209 2 has taken a fork
-000001209 2 is eating
-000001209 0 has taken a fork
-000001209 0 has taken a fork
-000001209 0 is eating
-000001212 6 died
+000000601 31 is thinking
+000000601 25 is thinking
+000000601 33 is thinking
+000000601 37 is thinking
+000000601 11 is thinking
+000000601 21 is thinking
+000000665 32 is sleeping
+000000665 34 is sleeping
+000000665 28 is sleeping
+000000665 33 has taken a fork
+000000665 33 has taken a fork
+000000665 33 is eating
+000000665 29 has taken a fork
+000000665 35 has taken a fork
+000000665 38 is sleeping
+000000665 39 has taken a fork
+000000665 2 is sleeping
+000000665 3 has taken a fork
+000000665 3 has taken a fork
+000000665 3 is eating
+000000665 4 is sleeping
+000000665 30 is sleeping
+000000665 36 is sleeping
+000000665 24 is sleeping
+000000665 25 has taken a fork
+000000665 35 has taken a fork
+000000665 35 is eating
+000000665 5 has taken a fork
+000000665 29 has taken a fork
+000000665 29 is eating
+000000665 31 has taken a fork
+000000665 31 has taken a fork
+000000665 31 is eating
+000000665 12 is sleeping
+000000665 13 has taken a fork
+000000665 25 has taken a fork
+000000665 25 is eating
+000000665 26 is sleeping
+000000665 27 has taken a fork
+000000665 27 has taken a fork
+000000665 27 is eating
+000000665 22 is sleeping
+000000665 23 has taken a fork
+000000665 23 has taken a fork
+000000665 23 is eating
+000000667 37 has taken a fork
+000000667 37 has taken a fork
+000000667 37 is eating
+000000680 20 is sleeping
+000000682 9 is thinking
+000000682 6 is sleeping
+000000682 5 has taken a fork
+000000682 5 is eating
+000000682 21 has taken a fork
+000000682 21 has taken a fork
+000000682 21 is eating
+000000687 14 is sleeping
+000000687 13 has taken a fork
+000000687 13 is eating
+000000706 7 is thinking
+000000706 10 is sleeping
+000000711 17 is thinking
+000000706 19 is thinking
+000000711 11 has taken a fork
+000000711 11 has taken a fork
+000000711 11 is eating
+000000711 15 is thinking
+000000729 0 is sleeping
+000000729 42 has taken a fork
+000000729 42 has taken a fork
+000000729 42 is eating
+000000743 18 is sleeping
+000000744 8 is sleeping
+000000744 9 has taken a fork
+000000744 9 has taken a fork
+000000744 9 is eating
+000000750 16 is sleeping
+000000778 7 has taken a fork
+000000778 7 has taken a fork
+000000778 7 is eating
+000000778 19 has taken a fork
+000000778 19 has taken a fork
+000000778 19 is eating
+000000778 17 has taken a fork
+000000778 17 has taken a fork
+000000778 17 is eating
+000000778 15 has taken a fork
+000000778 15 has taken a fork
+000000778 15 is eating
+000000778 1 has taken a fork
+000000778 1 has taken a fork
+000000778 1 is eating
+000000800 41 is thinking
+000000802 40 is sleeping
+000000802 39 has taken a fork
+000000802 39 is eating
+000000861 41 has taken a fork
+000000865 36 is thinking
+000000865 24 is thinking
+000000865 26 is thinking
+000000865 12 is thinking
+000000865 22 is thinking
+000000865 30 is thinking
+000000865 4 is thinking
+000000865 2 is thinking
+000000865 38 is thinking
+000000867 37 is sleeping
+000000882 21 is sleeping
+000000882 6 is thinking
+000000887 13 is sleeping
+000000903 14 is thinking
+000000903 31 is sleeping
+000000903 34 is thinking
+000000903 20 is thinking
+000000903 28 is thinking
+000000903 32 is thinking
+000000903 29 is sleeping
+000000903 33 is sleeping
+000000903 27 is sleeping
+000000903 35 is sleeping
+000000903 23 is sleeping
+000000903 25 is sleeping
+000000903 5 is sleeping
+000000903 3 is sleeping
+000000907 10 is thinking
+000000911 11 is sleeping
+000000926 2 has taken a fork
+000000926 24 has taken a fork
+000000926 24 has taken a fork
+000000926 24 is eating
+000000926 36 has taken a fork
+000000926 36 has taken a fork
+000000926 36 is eating
+000000927 26 has taken a fork
+000000927 26 has taken a fork
+000000927 26 is eating
+000000927 22 has taken a fork
+000000927 22 has taken a fork
+000000927 22 is eating
+000000927 4 has taken a fork
+000000927 4 has taken a fork
+000000927 4 is eating
+000000929 42 is sleeping
+000000929 41 has taken a fork
+000000929 41 is eating
+000000929 0 is thinking
+000000944 9 is sleeping
+000000964 34 has taken a fork
+000000964 34 has taken a fork
+000000964 34 is eating
+000000964 32 has taken a fork
+000000964 32 has taken a fork
+000000964 32 is eating
+000000964 20 has taken a fork
+000000964 28 has taken a fork
+000000964 28 has taken a fork
+000000964 28 is eating
+000000968 10 has taken a fork
+000000968 10 has taken a fork
+000000968 10 is eating
+000000978 17 is sleeping
+000000978 1 is sleeping
+000000978 2 has taken a fork
+000000978 2 is eating
+000000990 0 has taken a fork
+000000990 0 has taken a fork
+000000990 0 is eating
+000001002 40 is thinking
+000001028 18 is thinking
+000001028 12 has taken a fork
+000001028 12 has taken a fork
+000001028 12 is eating
+000001028 15 is sleeping
+000001028 14 has taken a fork
+000001028 14 has taken a fork
+000001028 14 is eating
+000001028 7 is sleeping
+000001028 6 has taken a fork
+000001028 6 has taken a fork
+000001028 6 is eating
+000001028 19 is sleeping
+000001028 20 has taken a fork
+000001028 20 is eating
+000001028 8 is thinking
+000001028 30 has taken a fork
+000001028 30 has taken a fork
+000001028 30 is eating
+000001028 16 is thinking
+000001028 39 is sleeping
+000001028 38 has taken a fork
+000001028 38 has taken a fork
+000001028 38 is eating
+000001069 37 is thinking
+000001082 21 is thinking
+000001088 13 is thinking
+000001089 8 has taken a fork
+000001089 8 has taken a fork
+000001089 8 is eating
+000001089 16 has taken a fork
+000001089 16 has taken a fork
+000001089 16 is eating
+000001089 18 has taken a fork
+000001089 18 has taken a fork
+000001089 18 is eating
+000001103 25 is thinking
+000001103 35 is thinking
+000001103 23 is thinking
+000001103 5 is thinking
+000001103 27 is thinking
+000001126 24 is sleeping
+000001126 36 is sleeping
+000001127 4 is sleeping
+000001127 22 is sleeping
+000001127 26 is sleeping
+000001129 41 is sleeping
+000001130 40 has taken a fork
+000001130 40 has taken a fork
+000001130 40 is eating
+000001131 37 has taken a fork
+000001153 11 is thinking
+000001153 31 is thinking
+000001153 9 is thinking
+000001153 29 is thinking
+000001153 33 is thinking
+000001153 3 is thinking
+000001153 42 is thinking
+000001164 25 has taken a fork
+000001164 25 has taken a fork
+000001164 25 is eating
+000001164 5 has taken a fork
+000001164 32 is sleeping
+000001164 27 has taken a fork
+000001164 23 has taken a fork
+000001164 23 has taken a fork
+000001164 23 is eating
+000001164 34 is sleeping
+000001164 35 has taken a fork
+000001164 35 has taken a fork
+000001164 35 is eating
+000001164 28 is sleeping
+000001164 27 has taken a fork
+000001164 27 is eating
+000001168 10 is sleeping
+000001178 2 is sleeping
+000001178 17 is thinking
+000001178 1 is thinking
+000001190 0 is sleeping
+000001214 29 has taken a fork
+000001214 3 has taken a fork
+000001214 3 has taken a fork
+000001214 3 is eating
+000001214 42 has taken a fork
+000001214 42 has taken a fork
+000001214 42 is eating
+000001214 11 has taken a fork
+000001214 33 has taken a fork
+000001214 33 has taken a fork
+000001214 33 is eating
+000001228 39 is thinking
+000001228 7 is thinking
+000001228 19 is thinking
+000001228 15 is thinking
+000001228 14 is sleeping
+000001228 29 has taken a fork
+000001228 29 is eating
+000001228 30 is sleeping
+000001228 31 has taken a fork
+000001228 31 has taken a fork
+000001228 31 is eating
+000001228 12 is sleeping
+000001228 11 has taken a fork
+000001228 11 is eating
+000001228 13 has taken a fork
+000001228 13 has taken a fork
+000001228 13 is eating
+000001228 38 is sleeping
+000001228 37 has taken a fork
+000001228 37 is eating
+000001228 6 is sleeping
+000001228 5 has taken a fork
+000001228 5 is eating
+000001228 20 is sleeping
+000001228 21 has taken a fork
+000001228 21 has taken a fork
+000001228 21 is eating
+000001240 1 has taken a fork
+000001240 1 has taken a fork
+000001240 1 is eating
+000001289 8 is sleeping
+000001289 16 is sleeping
+000001289 9 has taken a fork
+000001289 9 has taken a fork
+000001289 9 is eating
+000001289 17 has taken a fork
+000001289 17 has taken a fork
+000001289 17 is eating
+000001289 7 has taken a fork
+000001289 7 has taken a fork
+000001289 7 is eating
+000001289 19 has taken a fork
+000001289 19 has taken a fork
+000001289 19 is eating
+000001289 15 has taken a fork
+000001289 15 has taken a fork
+000001289 15 is eating
+000001289 18 is sleeping
+000001326 24 is thinking
+000001326 36 is thinking
+000001327 4 is thinking
+000001327 22 is thinking
+000001327 26 is thinking
+000001368 10 is thinking
+000001392 25 is sleeping
+000001392 24 has taken a fork
+000001392 35 is sleeping
+000001393 23 is sleeping
+000001393 24 has taken a fork
+000001393 24 is eating
+000001393 22 has taken a fork
+000001394 28 is thinking
+000001394 2 is thinking
+000001394 41 is thinking
+000001394 27 is sleeping
+000001394 26 has taken a fork
+000001394 26 has taken a fork
+000001394 26 is eating
+000001395 34 is thinking
+000001396 0 is thinking
+000001396 40 is sleeping
+000001397 32 is thinking
+000001403 39 has taken a fork
+000001403 39 has taken a fork
+000001403 39 is eating
+000001414 3 is sleeping
+000001414 42 is sleeping
+000001414 33 is sleeping
+000001428 29 is sleeping
+000001428 31 is sleeping
+000001428 11 is sleeping
+000001428 12 is thinking
+000001428 30 is thinking
+000001428 38 is thinking
+000001428 5 is sleeping
+000001428 20 is thinking
+000001428 14 is thinking
+000001428 6 is thinking
+000001455 41 has taken a fork
+000001455 41 has taken a fork
+000001455 41 is eating
+000001455 28 has taken a fork
+000001455 28 has taken a fork
+000001455 28 is eating
+000001455 2 has taken a fork
+000001456 34 has taken a fork
+000001456 34 has taken a fork
+000001456 34 is eating
+000001458 32 has taken a fork
+000001458 32 has taken a fork
+000001458 32 is eating
+000001489 30 has taken a fork
+000001489 30 has taken a fork
+000001489 30 is eating
+000001489 7 is sleeping
+000001489 6 has taken a fork
+000001489 6 has taken a fork
+000001489 6 is eating
+000001489 18 is thinking
+000001489 19 is sleeping
+000001489 15 is sleeping
+000001489 14 has taken a fork
+000001490 4 has taken a fork
+000001490 4 has taken a fork
+000001490 4 is eating
+000001490 21 is sleeping
+000001490 20 has taken a fork
+000001490 20 has taken a fork
+000001490 20 is eating
+000001490 22 has taken a fork
+000001490 22 is eating
+000001490 17 is sleeping
+000001515 16 is thinking
+000001515 13 is sleeping
+000001515 14 has taken a fork
+000001515 14 is eating
+000001515 12 has taken a fork
+000001515 12 has taken a fork
+000001515 12 is eating
+000001528 9 is sleeping
+000001528 8 is thinking
+000001528 10 has taken a fork
+000001528 10 has taken a fork
+000001528 10 is eating
+000001528 37 is sleeping
+000001528 36 has taken a fork
+000001528 36 has taken a fork
+000001528 0 has taken a fork
+000001528 0 has taken a fork
+000001528 1 is sleeping
+000001528 0 is eating
+000001528 2 has taken a fork
+000001528 2 is eating
+000001528 36 is eating
+000001550 18 has taken a fork
+000001550 18 has taken a fork
+000001550 18 is eating
+000001576 16 has taken a fork
+000001576 16 has taken a fork
+000001576 16 is eating
+000001589 8 has taken a fork
+000001589 8 has taken a fork
+000001589 8 is eating
+000001593 24 is sleeping
+000001594 26 is sleeping
+000001601 23 is thinking
+000001601 35 is thinking
+000001602 25 is thinking
+000001606 27 is thinking
+000001607 40 is thinking
+000001612 39 is sleeping
+000001612 38 has taken a fork
+000001612 38 has taken a fork
+000001612 38 is eating
+000001628 5 is thinking
+000001635 42 is thinking
+000001643 33 is thinking
+000001646 3 is thinking
+000001646 29 is thinking
+000001646 11 is thinking
+000001650 31 is thinking
+000001655 28 is sleeping
+000001655 41 is sleeping
+000001656 34 is sleeping
+000001658 32 is sleeping
+000001662 35 has taken a fork
+000001663 25 has taken a fork
+000001663 25 has taken a fork
+000001663 25 is eating
+000001667 27 has taken a fork
+000001667 27 has taken a fork
+000001667 27 is eating
+000001668 40 has taken a fork
+000001668 40 has taken a fork
+000001668 40 is eating
+000001689 19 is thinking
+000001689 30 is sleeping
+000001689 7 is thinking
+000001689 6 is sleeping
+000001690 15 is thinking
+000001690 20 is sleeping
+000001691 17 is thinking
+000001691 4 is sleeping
+000001691 5 has taken a fork
+000001691 5 has taken a fork
+000001691 5 is eating
+000001691 22 is sleeping
+000001691 23 has taken a fork
+000001691 23 has taken a fork
+000001691 23 is eating
+000001692 21 is thinking
+000001704 33 has taken a fork
+000001704 33 has taken a fork
+000001704 33 is eating
+000001707 29 has taken a fork
+000001707 29 has taken a fork
+000001707 29 is eating
+000001711 31 has taken a fork
+000001711 31 has taken a fork
+000001711 31 is eating
+000001715 14 is sleeping
+000001715 12 is sleeping
+000001716 13 is thinking
+000001728 9 is thinking
+000001728 0 is sleeping
+000001728 42 has taken a fork
+000001728 42 has taken a fork
+000001728 42 is eating
+000001728 1 is thinking
+000001728 2 is sleeping
+000001728 36 is sleeping
+000001728 35 has taken a fork
+000001728 35 is eating
+000001728 3 has taken a fork
+000001728 3 has taken a fork
+000001728 3 is eating
+000001729 10 is sleeping
+000001729 11 has taken a fork
+000001729 11 has taken a fork
+000001729 11 is eating
+000001730 37 is thinking
+000001750 7 has taken a fork
+000001750 18 is sleeping
+000001750 19 has taken a fork
+000001750 19 has taken a fork
+000001750 19 is eating
+000001756 15 has taken a fork
+000001759 21 has taken a fork
+000001759 21 has taken a fork
+000001759 21 is eating
+000001778 13 has taken a fork
+000001778 13 has taken a fork
+000001778 13 is eating
+000001778 16 is sleeping
+000001778 15 has taken a fork
+000001778 15 is eating
+000001778 17 has taken a fork
+000001778 17 has taken a fork
+000001778 17 is eating
+000001789 1 has taken a fork
+000001789 1 has taken a fork
+000001789 1 is eating
+000001789 8 is sleeping
+000001789 9 has taken a fork
+000001789 9 has taken a fork
+000001789 9 is eating
+000001789 7 has taken a fork
+000001789 7 is eating
+000001791 37 has taken a fork
+000001793 24 is thinking
+000001794 26 is thinking
+000001839 37 died
