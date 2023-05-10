@@ -6,7 +6,7 @@
 /*   By: lle-bret <lle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 18:41:48 by lle-bret          #+#    #+#             */
-/*   Updated: 2023/05/10 12:31:44 by lle-bret         ###   ########.fr       */
+/*   Updated: 2023/05/10 13:07:07 by lle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ void	free_philo(t_death *death)
 	i = -1;
 	while (++i < death->param.number_of_philo)
 	{
-		pthread_mutex_destroy(&death->philo[i].end_mutex);
-		pthread_mutex_destroy(&death->philo[i].he_ate_mutex);
+		pthread_mutex_destroy(death->philo[i].end_mutex);
+		pthread_mutex_destroy(death->philo[i].he_ate_mutex);
 	}
-	pthread_mutex_destroy(&death->data->printf_mutex);
+	pthread_mutex_destroy(death->data->printf_mutex);
 	free(death->philo);
 }
 
@@ -55,4 +55,10 @@ void	ft_usleep(long time_to_sleep)
 		time = time_ms(tv, NULL);
 		usleep(1);
 	}
+}
+
+void	free_if(void *to_free)
+{
+	if (to_free)
+		free(to_free);
 }

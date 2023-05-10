@@ -6,7 +6,7 @@
 /*   By: lle-bret <lle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 17:10:10 by lle-bret          #+#    #+#             */
-/*   Updated: 2023/05/10 12:41:38 by lle-bret         ###   ########.fr       */
+/*   Updated: 2023/05/10 13:36:28 by lle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ void	eat_routine(t_philo *philo)
 	pthread_mutex_lock(&philo->data->forks[fork_id(philo, 0)]);
 	print_log(philo, FORK_LOG, YELLOW);
 	print_log(philo, EAT_LOG, GREEN);
-	pthread_mutex_lock(&philo->he_ate_mutex);
+	pthread_mutex_lock(philo->he_ate_mutex);
 	gettimeofday(&philo->last_time_he_ate, NULL);
 	++(philo->number_of_times_he_ate);
-	pthread_mutex_unlock(&philo->he_ate_mutex);
+	pthread_mutex_unlock(philo->he_ate_mutex);
 	ft_usleep(philo->param.time_to_eat);
 	pthread_mutex_unlock(&philo->data->forks[fork_id(philo, 0)]);
 	pthread_mutex_unlock(&philo->data->forks[fork_id(philo, 1)]);
@@ -62,7 +62,7 @@ int	death_check(t_death *death, t_philo *philo)
 
 	i = -1;
 	finished_eating = 0;
-	while (!is_end(philo + ++i) && i < death->param.number_of_philo)
+	while (++i < death->param.number_of_philo && !is_end(philo + i))
 	{
 		if (death->param.max_eat == -1
 			|| number_of_times_he_ate(&philo[i]) < death->param.max_eat)
@@ -109,6 +109,7 @@ void	create_processes(t_death *death, t_philo *philo)
 	i = -1;
 	while (++i < nb)
 	{
+		// printf("thread routine : %i\n", i);
 		pthread_create(tid + i, NULL,
 			(void *)(*thread_routine), philo + i);
 	}

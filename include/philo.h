@@ -6,7 +6,7 @@
 /*   By: lle-bret <lle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 17:10:33 by lle-bret          #+#    #+#             */
-/*   Updated: 2023/05/10 12:31:06 by lle-bret         ###   ########.fr       */
+/*   Updated: 2023/05/10 13:07:16 by lle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@
 
 typedef struct s_data {
 	pthread_mutex_t	*forks;
-	pthread_mutex_t	printf_mutex;
+	pthread_mutex_t	*printf_mutex;
 }	t_data;
 
 typedef struct s_param{
@@ -56,17 +56,17 @@ typedef struct s_philo{
 	t_data			*data;
 	t_param			param;
 	int				end;
-	pthread_mutex_t	end_mutex;
+	pthread_mutex_t	*end_mutex;
 	int				number_of_times_he_ate;
 	struct timeval	last_time_he_ate;
-	pthread_mutex_t	he_ate_mutex;
+	pthread_mutex_t	*he_ate_mutex;
 }	t_philo;
 
 typedef struct s_death{
 	t_data			*data;
 	t_philo			*philo;
 	t_param			param;
-	pthread_mutex_t	global_end_mutex;
+	pthread_mutex_t	*global_end_mutex;
 	int				global_end;
 }	t_death;
 
@@ -124,5 +124,6 @@ int				ft_atoi(char *str);
 void			free_forks(pthread_mutex_t *forks, int nb);
 void			free_philo(t_death *death);
 void			ft_usleep(long time_to_sleep);
+void			free_if(void *to_free);
 
 #endif
