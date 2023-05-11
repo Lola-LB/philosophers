@@ -6,7 +6,7 @@
 /*   By: lle-bret <lle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 17:16:14 by lle-bret          #+#    #+#             */
-/*   Updated: 2023/04/07 17:27:27 by lle-bret         ###   ########.fr       */
+/*   Updated: 2023/05/11 13:57:47 by lle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,19 +28,16 @@ int	ft_error(char *str)
 	return (0);
 }
 
-int	ft_isdigit(int c)
-{
-	return ((c < 256) && '0' <= (char) c && (char) c <= '9');
-}
-
 int	ft_strdigit(char *str)
 {
 	int	i;
+	int	c;
 
 	i = 0;
 	while (i < ft_strlen(str))
 	{
-		if (!ft_isdigit(str[i]))
+		c = str[i];
+		if (!((c < 256) && '0' <= (char) c && (char) c <= '9'))
 			return (0);
 		++i;
 	}
@@ -61,10 +58,28 @@ int	ft_atoi(char *str)
 		sign = (*str == '+') - (*str == '-');
 		++str;
 	}
-	while (ft_isdigit(*str))
+	while ((((int) *str < 256) && '0' <= (int) *str
+			&& (int) *str <= '9'))
 	{
 		res = 10 * res + *str - '0';
 		++str;
 	}
 	return (sign * res);
+}
+
+void	*ft_calloc(size_t nmemb, size_t size)
+{
+	void	*buff;
+	int		n;
+
+	n = size * nmemb;
+	buff = malloc(n);
+	if (!buff)
+		return (NULL);
+	while (n > 0)
+	{
+		*(char *)(buff + n - 1) = 0;
+		--n;
+	}
+	return (buff);
 }

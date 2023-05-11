@@ -6,7 +6,7 @@
 /*   By: lle-bret <lle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 11:28:45 by lle-bret          #+#    #+#             */
-/*   Updated: 2023/05/10 17:23:59 by lle-bret         ###   ########.fr       */
+/*   Updated: 2023/05/11 13:53:48 by lle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,24 +42,6 @@ long	last_eat_time(t_philo *philo)
 	return (eat_time);
 }
 
-void	print_log(t_philo *philo, char *log, char *color)
-{
-	struct timeval	tv;
-
-	(void) color;
-	if (!is_end(philo))
-	{
-		gettimeofday(&tv, NULL);
-		pthread_mutex_lock(philo->data->printf_mutex);
-		// printf("%p\n", philo->data->printf_mutex);
-		printf("%09ld %d %s\n", time_ms(tv, &philo->param.start),
-			philo->id, log);
-		// printf("%s%09ld %d %s\n%s", color, time_ms(tv, philo),
-		// 	philo->id, log, NC);
-		pthread_mutex_unlock(philo->data->printf_mutex);
-	}
-}
-
 void	ft_usleep(long time_to_sleep)
 {
 	struct timeval	tv;
@@ -73,10 +55,8 @@ void	ft_usleep(long time_to_sleep)
 	{
 		gettimeofday(&tv, NULL);
 		time = time_ms(tv, NULL);
-		// printf("sleeping ten...\n");
-		usleep(10);
+		usleep(50);
 	}
-	// usleep(time_to_sleep * 1000);
 }
 
 int	fork_id(t_philo *philo, int first)

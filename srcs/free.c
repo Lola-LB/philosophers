@@ -6,38 +6,45 @@
 /*   By: lle-bret <lle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 18:41:48 by lle-bret          #+#    #+#             */
-/*   Updated: 2023/05/10 16:13:11 by lle-bret         ###   ########.fr       */
+/*   Updated: 2023/05/11 13:52:24 by lle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void	free_forks(pthread_mutex_t *forks, int nb)
+void	free_mutex(pthread_mutex_t *mut, int nb)
 {
 	int	i;
 
 	i = 0;
 	while (i < nb)
 	{
-		pthread_mutex_destroy(forks + i);
+		pthread_mutex_destroy(mut + i);
 		++i;
 	}
-	free(forks);
+	free_if(mut);
 }
 
-void	free_philo(t_death *death)
+void	free_shared_mutex(t_shared_mutex *shared_mutex, int n)
 {
-	int	i;
+	free_mutex(shared_mutex->forks, n);
+	free_mutex(shared_mutex->printf_mutex, 1);
+	free_if(shared_mutex);
+}
 
-	free_forks(death->data->forks, death->param.number_of_philo);
-	i = -1;
-	while (++i < death->param.number_of_philo)
-	{
-		pthread_mutex_destroy(death->philo[i].end_mutex);
-		pthread_mutex_destroy(death->philo[i].he_ate_mutex);
-	}
-	// pthread_mutex_destroy(death->data->printf_mutex);
-	free(death->philo);
+void	free_data(t_data *data)
+{
+	free_mutex(data->global_end_mutex, 1);
+	free_if(data);
+}
+
+void	free_all(t_data *data)
+{
+	free_shared_mutex(data->shared_mutex, data->param.number_of_philo);
+	free_mutex(data->philo->end_mutex, data->param.number_of_philo);
+	free_mutex(data->philo->he_ate_mutex, data->param.number_of_philo);
+	free_if(data->philo);
+	free_data(data);
 }
 
 void	free_if(void *to_free)

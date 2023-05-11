@@ -6,7 +6,7 @@
 /*   By: lle-bret <lle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 17:39:15 by lle-bret          #+#    #+#             */
-/*   Updated: 2023/05/10 16:31:52 by lle-bret         ###   ########.fr       */
+/*   Updated: 2023/05/11 14:07:44 by lle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ t_param	init_param(int ac, char **av)
 {
 	t_param			param;
 	struct timeval	now;
-	
 
 	gettimeofday(&now, NULL);
 	param.start = (long) now.tv_sec * 1000 + (long) now.tv_usec / 1000;
@@ -31,52 +30,44 @@ t_param	init_param(int ac, char **av)
 	return (param);
 }
 
-t_data	init_data(int nb)
+t_shared_mutex	*init_shared_mutex(int nb)
 {
-	t_data			data;
+	t_shared_mutex	*shared_mutex;
 	pthread_mutex_t	*forks;
-	pthread_mutex_t	printf_mut;
 	int				i;
 
-	data.printf_mutex = &printf_mut;
-	pthread_mutex_init(data.printf_mutex, NULL);
+	shared_mutex = malloc(sizeof(t_shared_mutex));
+	if (!shared_mutex)
+		return (NULL);
+	shared_mutex->printf_mutex = malloc(sizeof(pthread_mutex_t));
 	forks = malloc(sizeof(pthread_mutex_t) * nb);
-	data.forks = forks;
-	if (!data.forks)
-		return (data);
-	i = 0;
-	while (i < nb)
+	if (!forks || !shared_mutex->printf_mutex)
 	{
-		pthread_mutex_init(forks + i, NULL);
-		++i;
-	}
-	return (data);
-}
-
-t_philo	*init_philosophers(t_data *data, t_param param)
-{
-	t_philo			*philosophers;
-	pthread_mutex_t	*end_mutex;
-	pthread_mutex_t	*he_ate_mutex;
-	int				i;
-
-	philosophers = malloc(sizeof(t_philo) * param.number_of_philo);
-	end_mutex = malloc(sizeof(pthread_mutex_t) * param.number_of_philo);
-	he_ate_mutex = malloc(sizeof(pthread_mutex_t) * param.number_of_philo);
-	if (!philosophers || !end_mutex || !he_ate_mutex)
-	{
-		free_if(philosophers);
-		free_if(end_mutex);
-		free_if(he_ate_mutex);
+		free_if(shared_mutex->printf_mutex);
+		free_if(forks);
+		free(shared_mutex);
 		return (NULL);
 	}
+	pthread_mutex_init(shared_mutex->printf_mutex, NULL);
+	shared_mutex->forks = forks;
 	i = -1;
-	while (++i < param.number_of_philo)
+	while (++i < nb)
+		pthread_mutex_init(forks + i, NULL);
+	return (shared_mutex);
+}
+
+t_philo	*init_philo(t_philo *philosophers, t_data *data,
+	pthread_mutex_t *end_mutex, pthread_mutex_t *he_ate_mutex)
+{
+	int	i;
+
+	i = -1;
+	while (++i < data->param.number_of_philo)
 	{
-		philosophers[i].data = data;
-		philosophers[i].param = param;
+		philosophers[i].shared_mutex = data->shared_mutex;
+		philosophers[i].param = data->param;
 		philosophers[i].id = i;
-		philosophers[i].last_time_he_ate = param.start;
+		philosophers[i].last_time_he_ate = data->param.start;
 		philosophers[i].number_of_times_he_ate = 0;
 		philosophers[i].he_ate_mutex = he_ate_mutex + i;
 		pthread_mutex_init(philosophers[i].he_ate_mutex, NULL);
@@ -87,17 +78,47 @@ t_philo	*init_philosophers(t_data *data, t_param param)
 	return (philosophers);
 }
 
-t_death	init_death(t_data *data, t_philo *philo)
+t_philo	*init_philosophers(t_data *data)
 {
-	t_death			death;
-	pthread_mutex_t	global_end_mut;
+	t_philo			*philosophers;
+	pthread_mutex_t	*end_mutex;
+	pthread_mutex_t	*he_ate_mutex;
 
-	death.philo = philo;
-	death.param = philo->param;
-	death.data = data;
-	death.global_end_mutex = &global_end_mut;
-	pthread_mutex_init(death.global_end_mutex, NULL);
-	death.global_end = 0;
-	return (death);
+	philosophers = malloc(sizeof(t_philo) * data->param.number_of_philo);
+	end_mutex = malloc(sizeof(pthread_mutex_t) * data->param.number_of_philo);
+	he_ate_mutex = malloc(sizeof(pthread_mutex_t)
+			* data->param.number_of_philo);
+	if (!philosophers || !end_mutex || !he_ate_mutex)
+	{
+		free_if(philosophers);
+		free_if(end_mutex);
+		free_if(he_ate_mutex);
+		return (NULL);
+	}
+	return (init_philo(philosophers, data, end_mutex, he_ate_mutex));
 }
 
+t_data	*init_data(t_param param)
+{
+	t_data	*data;
+
+	data = malloc(sizeof(t_data));
+	if (!data)
+		return (NULL);
+	data->param = param;
+	data->global_end_mutex = malloc(sizeof(pthread_mutex_t));
+	if (!data->global_end_mutex)
+	{
+		free(data);
+		return (NULL);
+	}
+	pthread_mutex_init(data->global_end_mutex, NULL);
+	data->global_end = 0;
+	data->shared_mutex = init_shared_mutex(param.number_of_philo);
+	if (!data->shared_mutex)
+	{
+		free_data(data);
+		return (NULL);
+	}
+	return (data);
+}

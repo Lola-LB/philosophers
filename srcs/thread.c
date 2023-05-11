@@ -6,19 +6,34 @@
 /*   By: lle-bret <lle-bret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 17:10:10 by lle-bret          #+#    #+#             */
-/*   Updated: 2023/05/10 17:31:59 by lle-bret         ###   ########.fr       */
+/*   Updated: 2023/05/11 14:18:31 by lle-bret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
+void	print_log(t_philo *philo, char *log, char *color)
+{
+	struct timeval	tv;
+
+	(void) color;
+	if (!is_end(philo))
+	{
+		pthread_mutex_lock(philo->shared_mutex->printf_mutex);
+		gettimeofday(&tv, NULL);
+		printf("%09ld %d %s\n", time_ms(tv, &philo->param.start),
+			philo->id, log);
+		pthread_mutex_unlock(philo->shared_mutex->printf_mutex);
+	}
+}
+
 void	eat_routine(t_philo *philo)
 {
 	struct timeval	tv;
 
-	pthread_mutex_lock(&philo->data->forks[fork_id(philo, 1)]);
+	pthread_mutex_lock(&philo->shared_mutex->forks[fork_id(philo, 1)]);
 	print_log(philo, FORK_LOG, YELLOW);
-	pthread_mutex_lock(&philo->data->forks[fork_id(philo, 0)]);
+	pthread_mutex_lock(&philo->shared_mutex->forks[fork_id(philo, 0)]);
 	print_log(philo, FORK_LOG, YELLOW);
 	print_log(philo, EAT_LOG, GREEN);
 	pthread_mutex_lock(philo->he_ate_mutex);
@@ -27,22 +42,22 @@ void	eat_routine(t_philo *philo)
 	++(philo->number_of_times_he_ate);
 	pthread_mutex_unlock(philo->he_ate_mutex);
 	ft_usleep(philo->param.time_to_eat);
-	pthread_mutex_unlock(&philo->data->forks[fork_id(philo, 0)]);
-	pthread_mutex_unlock(&philo->data->forks[fork_id(philo, 1)]);
+	pthread_mutex_unlock(&philo->shared_mutex->forks[fork_id(philo, 0)]);
+	pthread_mutex_unlock(&philo->shared_mutex->forks[fork_id(philo, 1)]);
 }
 
 void	*thread_routine(t_philo *philo)
 {
 	if (philo->param.number_of_philo == 1)
 	{
-		pthread_mutex_lock(&philo->data->forks[fork_id(philo, 1)]);
+		pthread_mutex_lock(&philo->shared_mutex->forks[fork_id(philo, 1)]);
 		ft_usleep(philo->param.time_to_die * 1.1);
-		pthread_mutex_unlock(&philo->data->forks[fork_id(philo, 1)]);
+		pthread_mutex_unlock(&philo->shared_mutex->forks[fork_id(philo, 1)]);
 	}
 	if (philo->id % 2)
 		ft_usleep(philo->param.time_to_die * 0.10);
 	while (!is_end(philo) && (philo->param.max_eat == -1
-		|| number_of_times_he_ate(philo) < philo->param.max_eat))
+			|| number_of_times_he_ate(philo) < philo->param.max_eat))
 	{
 		if (philo->param.number_of_philo % 2 && number_of_times_he_ate(philo))
 			ft_usleep(philo->param.time_to_die * 0.10);
@@ -54,7 +69,7 @@ void	*thread_routine(t_philo *philo)
 	return (NULL);
 }
 
-int	death_check(t_death *death, t_philo *philo)
+int	death_check(t_data *data, t_philo *philo)
 {
 	struct timeval	tv;
 	int				finished_eating;
@@ -62,67 +77,32 @@ int	death_check(t_death *death, t_philo *philo)
 
 	i = -1;
 	finished_eating = 0;
-	while (++i < death->param.number_of_philo && !is_end(philo + i))
+	while (++i < data->param.number_of_philo && !is_end(philo + i))
 	{
-		if (death->param.max_eat == -1
-			|| number_of_times_he_ate(&philo[i]) < death->param.max_eat)
+		if (data->param.max_eat == -1
+			|| number_of_times_he_ate(&philo[i]) < data->param.max_eat)
 		{
 			gettimeofday(&tv, NULL);
 			if (time_ms(tv, NULL) - last_eat_time(&philo[i])
-					> death->param.time_to_die)
+				> data->param.time_to_die)
 			{
 				print_log(&philo[i], DEATH_LOG, RED);
-				global_end(death, philo);
+				global_end(data, philo);
 			}
 		}
-		else if (death->param.max_eat != -1)
+		else if (data->param.max_eat != -1)
 			++(finished_eating);
 	}
 	return (finished_eating);
 }
 
-void	*death_thread(t_death *death)
+void	*death_thread(t_data *data)
 {
 	int		finished_eating;
 
 	finished_eating = 0;
-	while (!check_global_end(death)
-		&& finished_eating < death->param.number_of_philo)
-		finished_eating = death_check(death, death->philo);
+	while (!check_global_end(data)
+		&& finished_eating < data->param.number_of_philo)
+		finished_eating = death_check(data, data->philo);
 	return (NULL);
-}
-
-void	create_processes(t_death *death, t_philo *philo)
-{
-	int			i;
-	int			nb;
-	pthread_t	*tid;
-
-	nb = death->param.number_of_philo;
-	tid = malloc(sizeof(pthread_t) * (nb + 1));
-	if (!tid)
-	{
-		free_philo(death);
-		return ;
-	}
-	i = -1;
-	while (++i < nb / 2 + nb % 2)
-	{
-		// printf("thread routine : %i\n", 2 * i);
-		pthread_create(tid + 2 * i, NULL,
-			(void *)(*thread_routine), philo + 2 * i);
-	}
-	i = -1;
-	while (++i < nb / 2)
-	{
-		// printf("thread routine : %i\n", 2 * i + 1);
-		pthread_create(tid + 2 * i + 1, NULL,
-			(void *)(*thread_routine), philo + 2 * i + 1);
-	}
-	pthread_create(tid + i, NULL,
-		(void *)(*death_thread), (void *) death);
-	i = -1;
-	while (++i < nb + 1)
-		pthread_join(tid[i], NULL);
-	free(tid);
 }
